@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 03</title>
+</head>
+<body>
+    <h1>Cadastro de Usuário</h1>
+
+    <form>
+        <label for="nome">Nome completo:</label><br>
+        <input type="text" id="nome"><br><br>
+
+        <label for="dataNasc">Data de nascimento:</label><br>
+        <input type="date" id="dataNasc"><br><br>
+
+        <label for="rua">Rua:</label><br>
+        <input type="text" id="rua"><br><br>
+
+        <label for="numero">Número:</label><br>
+        <input type="number" id="numero"><br><br>
+
+        <label for="cidade">Cidade:</label><br>
+        <input type="text" id="cidade"><br><br>
+
+        <label for="uf">Estado:</label><br>
+        <input type="text" id="uf"><br><br>
+
+        <button type="button" id="cadastrar" onclick="cadastrarUsuario()">
+            Cadastrar
+        </button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function cadastrarUsuario() {
+            // Capturar os valores dos campos
+            const nome = document.getElementById("nome").value;
+            const dataNascimento = document.getElementById("dataNasc").value;
+            const rua = document.getElementById("rua").value;
+            const numero = document.getElementById("numero").value;
+            const cidade = document.getElementById("cidade").value;
+            const estado = document.getElementById("uf").value;
+
+            // Montar a frase usando template strings
+            const frase = `${nome} nasceu no dia ${dataNascimento} e mora na rua ${rua}, número ${numero}, na cidade ${cidade} do estado ${estado}.`;
+
+            // Exibir a frase no elemento resultado
+            const resultado = document.getElementById("resultado");
+            resultado.textContent = frase;
+            
+            // Definir cor verde e tamanho 24px
+            resultado.style.color = "green";
+            resultado.style.fontSize = "24px";
+        }
+    </script>
+</body>
+</html>
